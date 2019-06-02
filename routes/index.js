@@ -15,7 +15,7 @@ router.get('/borrar', function(req, res, next) {
 
 router.get('/delete', function(req, res, next) {
 var myId2 = req.query.id;
-request.delete('http://localhost:3000/api/music/'+ myId2, function(err,response,data){
+request.delete('https://proyectoapirestjdad.herokuapp.com/api/music/'+ myId2, function(err,response,data){
   if(err){
     res.status(404).json({
         mensaje: "No existe"
@@ -41,7 +41,7 @@ request.delete('http://localhost:3000/api/music/'+ myId2, function(err,response,
 
 router.get('/buscar', function(req, res, next) {
 var myId = req.query.id;
-request('http://localhost:3000/api/music/'+ myId, function(err,response,data){
+request('https://proyectoapirestjdad.herokuapp.com/api/music/'+ myId, function(err,response,data){
 	if(err){
 		res.status(404).json({
         mensaje: "No existe"
