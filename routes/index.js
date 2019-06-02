@@ -22,12 +22,12 @@ request.delete('https://proyectoapirestjdad.herokuapp.com/api/music/'+ myId2, fu
       });
   }else {
      var datos=JSON.parse(data);
-     if(data.id==undefined){
+     if(datos==null){
       res.status(404).json({
         mensaje: "No existe"
       });
     }else{
-      res.render('eliminados',{id:datos.id, Grupo:datos.Grupo , Genero:datos.Genero, Fundacion:datos.Fundacion, Integrantes:datos.Integrantes});
+      res.render('eliminados',{id:datos.id,Link:datos.Link, Grupo:datos.Grupo , Genero:datos.Genero, Fundacion:datos.Fundacion, Integrantes:datos.Integrantes});
     }
       //res.render('eliminados',{id:datos.id, Grupo:datos.Grupo , Genero:datos.Genero, Fundacion:datos.Fundacion, Integrantes:datos.Integrantes});
       console.log(data.id);
